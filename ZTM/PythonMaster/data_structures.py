@@ -100,3 +100,60 @@ print(new_list)
 # Join - Converts to string
 new_string = "".join(["Hi","my","name","is","JOJO"])
 print(new_string)
+
+#Dictionary - Not sorted or order
+dictionary = {
+    "a":1,
+    "b":"item",
+    "c":False
+}
+print(dictionary["b"]) #It will print "item"
+
+# Methods
+dictionary2 = {
+    "Player":"MezcalFighter",
+    "Money":30000,
+    "isActive":True
+}
+
+# .GET - Returns the value from the key if exists
+print(dictionary2.get("Age")) #It will return none because Age does not exist
+
+# Default value if does not exist
+print(dictionary2.get("Age",27)) #It will return 27 because Age does not exist
+
+dictionary3 = dict(Player="MezcalFighter")
+print(dictionary3)
+
+#Another method if exist
+print("Player" in dictionary2) #True because the key exists
+
+# Keys - Check if the keys exist
+print("Age" in dictionary2.keys()) # False
+
+# Value - Check if the value exist
+print("MezcalFighter" in dictionary2.values()) # True
+
+#Items - list the entire dictionary
+print(dictionary2.items())
+
+# Clear - Clears the dictionary
+dictionary3.clear()
+print(dictionary3)
+
+# Copy - copies the dictionary
+user = dictionary2.copy()
+print(user)
+
+#Pop - it removes the value from the key 
+name = user.pop("Player")
+print(name)
+print(user) #Player is no longer in there because it was removed
+
+# popitem - removes the key and the last value from the item
+isActive = user.popitem()
+print(isActive) # Prints ('isActive', True) because it has the key and the value
+
+#Update - updates a key value or adds a new one
+print(user.update({"Age":27}))
+print(user)
