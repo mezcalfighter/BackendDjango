@@ -157,3 +157,70 @@ print(isActive) # Prints ('isActive', True) because it has the key and the value
 #Update - updates a key value or adds a new one
 print(user.update({"Age":27}))
 print(user)
+
+# Tuple - Inmutable lists
+my_tuple = (1,2,3,4,5)
+
+new_tuple = my_tuple[1:3]
+print(new_tuple)
+
+# Methods
+# Count - Index
+print(my_tuple.count(5)) # Counts the times that 5 is in my_tuple
+print(my_tuple.index(3)) # Find the index of 3
+
+# Sets - Unorder collection of unique values
+my_set ={1,2,3,4,5,6} # Cannot have duplicated values, if found then it overrides it
+my_set.add(2)
+print(my_set) # 2 was overrided in the same 2
+my_set.add(100) 
+print(my_set) # Adds 100 since there is no other
+
+# Create a set based of a list with duplicates
+ex_list = [1,2,3,4,5,5]
+ex_set = set(ex_list) # the duplicate 5 won't be added since it cannot have duplicates
+print(ex_set)
+
+# Check if exists 
+print(1 in my_set) # It will print True
+print(900 in my_set) # It will print False
+
+# Check the length of set
+print(len(my_set))
+
+# Copy set
+new_set = my_set.copy()
+print(new_set)
+
+# Clears set
+new_set.clear()
+print(new_set)
+
+# Different methods
+diff_set = {1,2,3,4,5}
+new_diff = {4,5,6,7,8,9,10}
+# Difference - Looks for the difference
+print(diff_set.difference(new_diff)) # 1,2,3 since 4 and 5 are in new_diff
+
+# Discard - # Discard an item from set
+diff_set.discard(5) 
+print(diff_set) # it will print 1,2,3,4 since 5 was discarted
+
+# Difference_update - Removes all elements of another set from this set
+#diff_set.difference_update(new_diff) 
+#print(diff_set) # it will print an empty set 
+
+# intersection -
+print(diff_set.intersection(new_diff)) # it will print only 4 since they only both have 4
+
+# isdisjoint - # Returns true or false, true if they don't have something in common and false if they do
+print(diff_set.isdisjoint(new_diff)) # false, they both have 4
+
+# issubset - All contents of one set are in other set (subset)
+print(diff_set.issubset(new_diff)) # False, they only have 4 in common
+
+# issupperset - If the other set is the complete set of a subset
+print(new_diff.issuperset(diff_set)) # False
+
+# union - Concatenates both sets into one
+print(diff_set.union(new_diff))
